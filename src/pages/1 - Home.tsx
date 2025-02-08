@@ -60,8 +60,9 @@ const Home: React.FC = () => {
               </span>
             </IonItem>
           </IonList>
-          <div style={{ ...verticalCenterStyle, flex: '1 1 100%', overflow: 'hidden', height: '100%' }}>
+          <div style={{ flex: '1 1 100%', overflow: 'hidden', height: '100%' }}>
             <Swiper
+              style={{ translate: '0 -150px', height: 'calc(100% + 150px)' }}
               modules={[EffectCoverflow, Mousewheel]}
               effect={'coverflow'}
               coverflowEffect={{

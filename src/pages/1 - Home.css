@@ -1,7 +1,9 @@
 ion-list {
     background-color: transparent !important;
+    padding: 10px !important;
 }
 ion-item {
+    /* --background: indianred; */
     --background: transparent;
     --border-color: white;
 }

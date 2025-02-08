@@ -6,7 +6,7 @@ ion-item {
     --border-color: white;
 }
 .swiper-slide {
-    opacity: 0.25 !important;
+    opacity: 0.2 !important;
 }
 .swiper-slide-active {
     opacity: 1 !important;

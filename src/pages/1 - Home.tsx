@@ -65,7 +65,7 @@ const Home: React.FC = () => {
               modules={[EffectCoverflow, Mousewheel]}
               effect={'coverflow'}
               coverflowEffect={{
-                // rotate: 25
+                // rotate: 0
               }}
               grabCursor={true}
               centeredSlides={true}

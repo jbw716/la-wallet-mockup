@@ -65,7 +65,7 @@ const Home: React.FC = () => {
               modules={[EffectCoverflow]}
               effect={'coverflow'}
               coverflowEffect={{
-                rotate: 25
+                rotate: -30
               }}
               grabCursor={true}
               centeredSlides={true}

@@ -65,12 +65,13 @@ const Home: React.FC = () => {
               modules={[EffectCoverflow]}
               effect={'coverflow'}
               coverflowEffect={{
-                rotate: -30
+                rotate: 0
               }}
               grabCursor={true}
               centeredSlides={true}
               slidesPerView="auto"
               direction='vertical'
+              spaceBetween={-150}
             >
               <SwiperSlide style={{ ...verticalCenterStyle, height: '300px' }}>
                 <img src='assets/img/license.png' />

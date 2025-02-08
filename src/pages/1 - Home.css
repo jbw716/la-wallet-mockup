@@ -1,7 +1,13 @@
 ion-list {
-  background-color: transparent !important;
+    background-color: transparent !important;
 }
 ion-item {
-  --background: transparent;
-  --border-color: white;
+    --background: transparent;
+    --border-color: white;
+}
+.swiper-slide {
+    opacity: 0.25 !important;
+}
+.swiper-slide-active {
+    opacity: 1 !important;
 }

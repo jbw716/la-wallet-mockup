@@ -60,7 +60,7 @@ const Home: React.FC = () => {
               </span>
             </IonItem>
           </IonList>
-          <div style={{ flex: '1 1 100%', overflow: 'hidden', height: '100%' }}>
+          <div style={{ flex: '1 1 100%', overflow: 'hidden', height: '100%', padding: '0 10px' }}>
             <Swiper
               style={{ translate: '0 -15%', height: '120%' }}
               modules={[EffectCoverflow, Mousewheel]}

@@ -1,3 +1,7 @@
-ion-content {
-    --background: linear-gradient(#224992, #16214b);
+ion-list {
+  background-color: transparent !important;
+}
+ion-item {
+  --background: transparent;
+  --border-color: white;
 }

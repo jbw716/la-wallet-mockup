@@ -3,6 +3,10 @@ http://ionicframework.com/docs/theming/ */
 
 /* #306bb2 */
 
+ion-content {
+    --background: linear-gradient(#224992, #16214b);
+}
+
 :root {
     --ion-color-primary: #306bb2;
     --ion-color-primary-rgb: 48, 107, 178;

@@ -8,7 +8,6 @@ import { EffectCards } from 'swiper/modules';
 import { call, chatbubble, globe } from 'ionicons/icons';
 
 const verticalCenterStyle: CSSProperties = {
-  // height: '100%',
   display: 'flex',
   flexDirection: 'column',
   justifyContent: 'center',
@@ -60,7 +59,7 @@ const Home: React.FC = () => {
               </span>
             </IonItem>
           </IonList>
-          <div style={{ ...verticalCenterStyle, flex: '1 1 100%', overflow: 'hidden', height: '100%' }}>
+          <div style={{ ...verticalCenterStyle, marginTop: '-30%', flex: '1 1 100%', overflow: 'hidden', height: '100%' }}>
             <Swiper
               modules={[EffectCards]}
               effect={'cards'}

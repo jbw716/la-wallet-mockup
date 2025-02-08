@@ -1,0 +1,7 @@
+{
+  "name": "la-wallet",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react-vite"
+}

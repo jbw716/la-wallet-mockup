@@ -4,7 +4,7 @@ import 'swiper/css/effect-cards';
 import { IonContent, IonHeader, IonPage, IonToolbar, IonImg, IonItem, IonLabel, IonList, IonButton, IonIcon } from '@ionic/react';
 import { CSSProperties } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { EffectCoverflow } from 'swiper/modules';
+import { EffectCoverflow, Mousewheel } from 'swiper/modules';
 // import { EffectCards } from 'swiper/modules';
 import { call, chatbubble, globe } from 'ionicons/icons';
 
@@ -62,7 +62,7 @@ const Home: React.FC = () => {
           </IonList>
           <div style={{ ...verticalCenterStyle, flex: '1 1 100%', overflow: 'hidden', height: '100%' }}>
             <Swiper
-              modules={[EffectCoverflow]}
+              modules={[EffectCoverflow, Mousewheel]}
               effect={'coverflow'}
               coverflowEffect={{
                 // rotate: 25
@@ -72,6 +72,7 @@ const Home: React.FC = () => {
               slidesPerView="auto"
               direction='vertical'
               spaceBetween={-150}
+              mousewheel={true}
             >
               <SwiperSlide style={{ ...verticalCenterStyle, height: '300px' }}>
                 <img src='assets/img/license.png' />

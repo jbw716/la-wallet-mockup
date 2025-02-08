@@ -4,7 +4,8 @@ import 'swiper/css/effect-cards';
 import { IonContent, IonHeader, IonPage, IonToolbar, IonImg, IonItem, IonLabel, IonList, IonButton, IonIcon } from '@ionic/react';
 import { CSSProperties } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { EffectCards } from 'swiper/modules';
+import { EffectCoverflow } from 'swiper/modules';
+// import { EffectCards } from 'swiper/modules';
 import { call, chatbubble, globe } from 'ionicons/icons';
 
 const verticalCenterStyle: CSSProperties = {
@@ -59,29 +60,34 @@ const Home: React.FC = () => {
               </span>
             </IonItem>
           </IonList>
-          <div style={{ ...verticalCenterStyle, marginTop: '-30%', flex: '1 1 100%', overflow: 'hidden', height: '100%' }}>
+          <div style={{ ...verticalCenterStyle, flex: '1 1 100%', overflow: 'hidden', height: '100%' }}>
             <Swiper
-              modules={[EffectCards]}
-              effect={'cards'}
+              modules={[EffectCoverflow]}
+              effect={'coverflow'}
+              coverflowEffect={{
+                rotate: 25
+              }}
+              grabCursor={true}
+              centeredSlides={true}
+              slidesPerView="auto"
               direction='vertical'
-              style={{ maxHeight: '300px' }}
             >
-              <SwiperSlide style={verticalCenterStyle}>
+              <SwiperSlide style={{ ...verticalCenterStyle, height: '300px' }}>
                 <img src='assets/img/license.png' />
               </SwiperSlide>
-              <SwiperSlide style={verticalCenterStyle}>
+              <SwiperSlide style={{ ...verticalCenterStyle, height: '300px' }}>
                 <img src='assets/img/CarRegistration.jpg' />
               </SwiperSlide>
-              <SwiperSlide style={verticalCenterStyle}>
+              <SwiperSlide style={{ ...verticalCenterStyle, height: '300px' }}>
                 <img src='assets/img/ConcealedHandgun.jpg' />
               </SwiperSlide>
-              <SwiperSlide style={verticalCenterStyle}>
+              <SwiperSlide style={{ ...verticalCenterStyle, height: '300px' }}>
                 <img src='assets/img/LDFW.jpg' />
               </SwiperSlide>
-              <SwiperSlide style={verticalCenterStyle}>
+              <SwiperSlide style={{ ...verticalCenterStyle, height: '300px' }}>
                 <img src='assets/img/Medicaid.jpg' />
               </SwiperSlide>
-              <SwiperSlide style={verticalCenterStyle}>
+              <SwiperSlide style={{ ...verticalCenterStyle, height: '300px' }}>
                 <img src='assets/img/SMARTHealth.jpg' />
               </SwiperSlide>
             </Swiper>

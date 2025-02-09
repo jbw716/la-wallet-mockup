@@ -1,4 +1,4 @@
-import { IonCard, IonCardContent, IonCardHeader, IonCardSubtitle, IonCheckbox, IonIcon, IonImg, IonItem, IonLabel, IonList, IonText } from '@ionic/react';
+import { IonCard, IonCardContent, IonCardHeader, IonCardSubtitle, IonCheckbox, IonIcon, IonImg, IonItem, IonLabel, IonList, IonNote, IonText } from '@ionic/react';
 // import './2 - Share.css';
 import { useEffect, useState } from 'react';
 import { informationCircle } from 'ionicons/icons';
@@ -33,6 +33,15 @@ const ShareQR: React.FC = () => {
           </div>
         </IonCardContent>
       </IonCard>
+      <IonItem lines="none" style={{ paddingTop: '0.5em' }}>
+        <IonIcon icon={informationCircle} slot="start" color="light" style={{ margin: '0 1em 0 0' }}></IonIcon>
+        <IonText color="light">
+          Select whether you would like to share you name, and, and/or driver's license number.
+          <br />
+          * <IonNote color="light">Portrait and status information are required.</IonNote>
+        </IonText>
+      </IonItem>
+      {/* <IonNote color="light" style={{ marginLeft: '4em' }}>* Portrait and status information are required.</IonNote> */}
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
         <IonCard style={{ flex: '1 1 50%' }}>
           <IonCardHeader>
@@ -63,12 +72,6 @@ const ShareQR: React.FC = () => {
           </IonCardContent>
         </IonCard>
       </div>
-      <IonItem lines="none" style={{ paddingTop: '0.5em' }}>
-        <IonIcon icon={informationCircle} slot="start" color="light" style={{ margin: '0 1em 0 0' }}></IonIcon>
-        <IonText color="light">
-          Select whether you would like to share you name, and, and/or driver's license number.
-        </IonText>
-      </IonItem>
       <IonCard>
         <IonCardHeader>
           <IonCardSubtitle>

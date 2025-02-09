@@ -111,14 +111,13 @@ const ShareQR: React.FC = () => {
         </IonCardHeader>
         <IonCardContent>
           <IonItem>
-            <IonLabel>
-              <strong>Over 25</strong>
-            </IonLabel>
-            <IonCheckbox slot="end" checked={shareSettings.age}
+            <IonCheckbox checked={shareSettings.age}
               onIonChange={e => {
                 setShareSettings({ name: shareSettings.name, age: e.detail.checked, license: shareSettings.license });
                 updateQRState();
-              }}></IonCheckbox>
+              }}>
+              <strong>Over 25</strong>
+            </IonCheckbox>
           </IonItem>
         </IonCardContent>
       </IonCard>
@@ -130,14 +129,13 @@ const ShareQR: React.FC = () => {
         </IonCardHeader>
         <IonCardContent>
           <IonItem>
-            <IonLabel>
-              <strong>John Envoc Doe</strong>
-            </IonLabel>
-            <IonCheckbox slot="end" checked={shareSettings.name}
+            <IonCheckbox checked={shareSettings.name}
               onIonChange={e => {
                 setShareSettings({ name: e.detail.checked, age: shareSettings.age, license: shareSettings.license });
                 updateQRState();
-              }}></IonCheckbox>
+              }}>
+              <strong>John Envoc Doe</strong>
+            </IonCheckbox>
           </IonItem>
         </IonCardContent>
       </IonCard>
@@ -149,14 +147,13 @@ const ShareQR: React.FC = () => {
         </IonCardHeader>
         <IonCardContent>
           <IonItem>
-            <IonLabel>
-              <strong>999999996</strong>
-            </IonLabel>
-            <IonCheckbox slot="end" checked={shareSettings.license}
+            <IonCheckbox checked={shareSettings.license}
               onIonChange={e => {
                 setShareSettings({ name: shareSettings.name, age: shareSettings.age, license: e.detail.checked });
                 updateQRState();
-              }}></IonCheckbox>
+              }}>
+              <strong>999999996</strong>
+            </IonCheckbox>
           </IonItem>
         </IonCardContent>
       </IonCard>

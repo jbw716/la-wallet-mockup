@@ -20,14 +20,7 @@ class ShareSettings {
 const ShareQR: React.FC = () => {
 
   const [shareSettings, setShareSettings] = useState<ShareSettings>({ name: true, age: true, license: true });
-  const [qrValue, setQrValue] = useState<QRInfo>(
-    {
-      hash: crypto.randomUUID(),
-      name: shareSettings.name ? 'John Envoc Doe' : null,
-      age: shareSettings.age ? 25 : null,
-      license: shareSettings.license ? '999999996' : null
-    }
-  );
+  const [qrValue, setQrValue] = useState<QRInfo>();
 
   function updateQRState() {
     setQrValue(
@@ -41,9 +34,10 @@ const ShareQR: React.FC = () => {
   }
 
   useEffect(() => {
+    updateQRState();
     const timerId = setInterval(() => updateQRState(), 1000);
     return () => clearInterval(timerId);
-  });
+  }, []);
 
   return (
     <IonList>

@@ -41,7 +41,6 @@ const ShareQR: React.FC = () => {
           * <IonNote color="light">Portrait and status information are required.</IonNote>
         </IonText>
       </IonItem>
-      {/* <IonNote color="light" style={{ marginLeft: '4em' }}>* Portrait and status information are required.</IonNote> */}
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
         <IonCard style={{ flex: '1 1 50%' }}>
           <IonCardHeader>

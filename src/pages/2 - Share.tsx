@@ -1,4 +1,4 @@
-import { IonCard, IonCardContent, IonCardHeader, IonCardSubtitle, IonCheckbox, IonContent, IonHeader, IonIcon, IonImg, IonItem, IonLabel, IonList, IonPage, IonSegment, IonSegmentButton, IonTitle, IonToolbar } from '@ionic/react';
+import { IonCard, IonCardContent, IonCardHeader, IonCardSubtitle, IonCheckbox, IonContent, IonHeader, IonIcon, IonImg, IonItem, IonLabel, IonList, IonPage, IonSegment, IonSegmentButton, IonText, IonTitle, IonToolbar } from '@ionic/react';
 import './2 - Share.css';
 import { CSSProperties, useEffect, useState } from 'react';
 import { informationCircle } from 'ionicons/icons';
@@ -45,8 +45,7 @@ const Share: React.FC = () => {
           <IonCard style={{ marginBottom: '10px' }}>
             <IonCardHeader style={{ border: 'none' }}>
               <IonCardSubtitle style={{ textAlign: 'center' }}>
-                To use Verify You, present the below QR code for scanning.
-                Select whether you would like to share you name, and, and/or driver's license number.
+                To use Verify You,<br />present the below QR code for scanning.
                 <br />
                 <br />
                 <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%' }}>
@@ -91,6 +90,13 @@ const Share: React.FC = () => {
               </IonCardContent>
             </IonCard>
           </div>
+          <br />
+          <IonItem lines="none">
+            <IonIcon icon={informationCircle} slot="start" color="light" style={{ margin: '0 1em 0 0' }}></IonIcon>
+            <IonText color="light">
+              Select whether you would like to share you name, and, and/or driver's license number.
+            </IonText>
+          </IonItem>
           <IonCard>
             <IonCardHeader>
               <IonCardSubtitle>

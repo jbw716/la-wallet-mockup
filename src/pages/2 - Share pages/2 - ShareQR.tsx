@@ -4,12 +4,44 @@ import { useEffect, useState } from 'react';
 import { informationCircle } from 'ionicons/icons';
 import { QRCode } from 'react-qrcode-logo';
 
+class QRInfo {
+  hash!: string;
+  name: string | undefined | null;
+  age: number | undefined | null;
+  license: string | undefined | null;
+}
+
+class ShareSettings {
+  name!: boolean;
+  age!: boolean;
+  license!: boolean;
+}
+
 const ShareQR: React.FC = () => {
 
-  const [qrValue, setQrValue] = useState(crypto.randomUUID());
+  const [shareSettings, setShareSettings] = useState<ShareSettings>({ name: true, age: true, license: true });
+  const [qrValue, setQrValue] = useState<QRInfo>(
+    {
+      hash: crypto.randomUUID(),
+      name: shareSettings.name ? 'John Envoc Doe' : null,
+      age: shareSettings.age ? 25 : null,
+      license: shareSettings.license ? '999999996' : null
+    }
+  );
+
+  function updateQRState() {
+    setQrValue(
+      {
+        hash: crypto.randomUUID(),
+        name: shareSettings.name ? 'John Envoc Doe' : null,
+        age: shareSettings.age ? 25 : null,
+        license: shareSettings.license ? '999999996' : null
+      }
+    );
+  }
 
   useEffect(() => {
-    const timerId = setInterval(() => setQrValue(crypto.randomUUID()), 1000);
+    const timerId = setInterval(() => updateQRState(), 1000);
     return () => clearInterval(timerId);
   });
 
@@ -29,7 +61,7 @@ const ShareQR: React.FC = () => {
         <IonCardContent>
           <div style={{ position: 'relative', height: '220px' }}>
             <IonImg src='assets/img/face.png' style={{ left: '50%', transform: 'translateX(-50%)', width: '200px', height: '200px', 'object-fit': 'cover', position: 'absolute' }}></IonImg>
-            <QRCode value={qrValue} size={200} ecLevel='H' qrStyle='dots' bgColor='transparent' style={{ left: '50%', top: '-10px', transform: 'translateX(-50%)', position: 'absolute' }}></QRCode>
+            <QRCode value={JSON.stringify(qrValue)} size={200} ecLevel='H' qrStyle='dots' bgColor='transparent' style={{ left: '50%', top: '-10px', transform: 'translateX(-50%)', position: 'absolute' }}></QRCode>
           </div>
         </IonCardContent>
       </IonCard>
@@ -82,7 +114,11 @@ const ShareQR: React.FC = () => {
             <IonLabel>
               <strong>Over 25</strong>
             </IonLabel>
-            <IonCheckbox slot="end" checked={true}></IonCheckbox>
+            <IonCheckbox slot="end" checked={shareSettings.age}
+              onIonChange={e => {
+                setShareSettings({ name: shareSettings.name, age: e.detail.checked, license: shareSettings.license });
+                updateQRState();
+              }}></IonCheckbox>
           </IonItem>
         </IonCardContent>
       </IonCard>
@@ -97,7 +133,11 @@ const ShareQR: React.FC = () => {
             <IonLabel>
               <strong>John Envoc Doe</strong>
             </IonLabel>
-            <IonCheckbox slot="end" checked={true}></IonCheckbox>
+            <IonCheckbox slot="end" checked={shareSettings.name}
+              onIonChange={e => {
+                setShareSettings({ name: e.detail.checked, age: shareSettings.age, license: shareSettings.license });
+                updateQRState();
+              }}></IonCheckbox>
           </IonItem>
         </IonCardContent>
       </IonCard>
@@ -112,7 +152,11 @@ const ShareQR: React.FC = () => {
             <IonLabel>
               <strong>999999996</strong>
             </IonLabel>
-            <IonCheckbox slot="end" checked={true}></IonCheckbox>
+            <IonCheckbox slot="end" checked={shareSettings.license}
+              onIonChange={e => {
+                setShareSettings({ name: shareSettings.name, age: shareSettings.age, license: e.detail.checked });
+                updateQRState();
+              }}></IonCheckbox>
           </IonItem>
         </IonCardContent>
       </IonCard>

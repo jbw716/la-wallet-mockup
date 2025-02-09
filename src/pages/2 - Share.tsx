@@ -33,17 +33,18 @@ const Share: React.FC = () => {
       <IonContent>
         <div style={contentContainerStyle}>
 
-
-          <IonToolbar color="primary" style={{ flex: '0 0 auto', width: '100%' }}>
-            <IonSegment value={segment} onIonChange={e => setSegment(e.detail.value as string)}>
-              <IonSegmentButton color="light" value="verify">
-                Verify You
-              </IonSegmentButton>
-              <IonSegmentButton color="light" value="remote">
-                Remote Verify
-              </IonSegmentButton>
-            </IonSegment>
-          </IonToolbar>
+          <IonHeader>
+            <IonToolbar color="primary" style={{ flex: '0 0 auto', width: '100%' }}>
+              <IonSegment value={segment} onIonChange={e => setSegment(e.detail.value as string)}>
+                <IonSegmentButton color="light" value="verify">
+                  Verify You
+                </IonSegmentButton>
+                <IonSegmentButton color="light" value="remote">
+                  Remote Verify
+                </IonSegmentButton>
+              </IonSegment>
+            </IonToolbar>
+          </IonHeader>
 
 
           <IonList style={{ flex: '1 1 auto', width: '100%', overflow: 'auto' }}>

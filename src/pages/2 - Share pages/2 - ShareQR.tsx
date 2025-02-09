@@ -59,7 +59,7 @@ const ShareQR: React.FC = () => {
           </div>
         </IonCardContent>
       </IonCard>
-      <IonItem lines="none" style={{ paddingTop: '0.5em' }}>
+      <IonItem lines="none">
         <IonIcon icon={informationCircle} slot="start" color="light" style={{ margin: '0 1em 0 0' }}></IonIcon>
         <IonText color="light">
           Select whether you would like to share you name, and, and/or driver's license number.

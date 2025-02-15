@@ -1,21 +1,30 @@
-import { IonButton, IonButtons, IonContent, IonHeader, IonIcon, IonItem, IonList, IonModal, IonNote, IonPage, IonText, IonTitle, IonToolbar } from '@ionic/react';
+import { IonButton, IonButtons, IonContent, IonHeader, IonIcon, IonModal, IonNote, IonPage, IonText, IonTitle, IonToolbar, useIonViewDidLeave, useIonViewWillEnter } from '@ionic/react';
 import './3 - Scan.css';
 import { Scanner } from '@yudiel/react-qr-scanner';
 import { useEffect, useRef, useState } from 'react';
-import { informationCircle, informationCircleOutline } from 'ionicons/icons';
+import { informationCircleOutline } from 'ionicons/icons';
 
 const Scan: React.FC = () => {
   const modal = useRef<HTMLIonModalElement>(null);
   const page = useRef(null);
 
   const [presentingElement, setPresentingElement] = useState<HTMLElement | null>(null);
+  const [showScanner, setShowScanner] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+  const [data, setData] = useState('');
 
   useEffect(() => {
     setPresentingElement(page.current);
   }, []);
 
-  const [isOpen, setIsOpen] = useState(false);
-  const [data, setData] = useState('');
+  useIonViewWillEnter(() => {
+    setShowScanner(true);
+  });
+
+  useIonViewDidLeave(() => {
+    setShowScanner(false);
+  });
+
   return (
     <IonPage>
       <IonHeader>
@@ -29,14 +38,16 @@ const Scan: React.FC = () => {
             Scan a VerifyYou Code or SMART Health Card
           </IonText>
           <div style={{ flex: '1 1 45%', width: '100%' }}>
-            <Scanner formats={['qr_code']}
-              components={{ zoom: true }}
-              styles={{ container: { width: '100%', height: 'auto' }, video: { width: '100%', height: 'auto' } }}
-              onScan={(data) => {
-                console.log(data);
-                setData(data[0].rawValue)
-                setIsOpen(true);
-              }} />
+            {showScanner &&
+              <Scanner formats={['qr_code']}
+                components={{ zoom: true }}
+                styles={{ container: { width: '100%', height: 'auto' }, video: { width: '100%', height: 'auto' } }}
+                onScan={(data) => {
+                  console.log(data);
+                  setData(data[0].rawValue)
+                  setIsOpen(true);
+                }} />
+            }
           </div>
           <div style={{ flex: '1 1 45%', width: '100%', textAlign: 'center', paddingTop: '1.5em' }}>
             <IonNote color="light" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>

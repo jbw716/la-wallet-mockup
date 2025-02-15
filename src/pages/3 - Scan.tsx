@@ -1,7 +1,8 @@
-import { IonButton, IonButtons, IonContent, IonHeader, IonModal, IonPage, IonTitle, IonToolbar } from '@ionic/react';
+import { IonButton, IonButtons, IonContent, IonHeader, IonIcon, IonItem, IonList, IonModal, IonNote, IonPage, IonText, IonTitle, IonToolbar } from '@ionic/react';
 import './3 - Scan.css';
 import { Scanner } from '@yudiel/react-qr-scanner';
 import { useEffect, useRef, useState } from 'react';
+import { informationCircle, informationCircleOutline } from 'ionicons/icons';
 
 const Scan: React.FC = () => {
   const modal = useRef<HTMLIonModalElement>(null);
@@ -19,21 +20,34 @@ const Scan: React.FC = () => {
     <IonPage>
       <IonHeader>
         <IonToolbar color="primary">
-          <IonTitle className='ion-text-center'>Scan</IonTitle>
+          <IonTitle className='ion-text-center'>Scan Code</IonTitle>
         </IonToolbar>
       </IonHeader>
-      <IonContent>
-        <Scanner formats={['qr_code']}
-          components={{ zoom: true }}
-          styles={{ container: { width: '100%', height: 'auto' }, video: { width: '100%', height: 'auto' } }}
-          onScan={(data) => {
-            console.log(data);
-            setData(data[0].rawValue)
-            setIsOpen(true);
-          }} />
+      <IonContent scrollX={false} scrollY={false} ref={page}>
+        <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', width: '100%', height: '100%' }}>
+          <IonText color="light" style={{ flex: '1 1 10%', width: '100%', textAlign: 'center', paddingTop: '1.5em' }}>
+            Scan a VerifyYou Code or SMART Health Card
+          </IonText>
+          <div style={{ flex: '1 1 45%', width: '100%' }}>
+            <Scanner formats={['qr_code']}
+              components={{ zoom: true }}
+              styles={{ container: { width: '100%', height: 'auto' }, video: { width: '100%', height: 'auto' } }}
+              onScan={(data) => {
+                console.log(data);
+                setData(data[0].rawValue)
+                setIsOpen(true);
+              }} />
+          </div>
+          <div style={{ flex: '1 1 45%', width: '100%', textAlign: 'center', paddingTop: '1.5em' }}>
+            <IonNote color="light" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+              <IonIcon icon={informationCircleOutline} style={{ paddingRight: '0.5em' }}></IonIcon>
+              Scanning will happen automatically
+            </IonNote>
+          </div>
+        </div>
         <IonModal isOpen={isOpen} presentingElement={presentingElement!} ref={modal}>
           <IonHeader>
-            <IonToolbar>
+            <IonToolbar color="primary">
               <IonTitle>Modal</IonTitle>
               <IonButtons slot="end">
                 <IonButton onClick={() => setIsOpen(false)}>Close</IonButton>

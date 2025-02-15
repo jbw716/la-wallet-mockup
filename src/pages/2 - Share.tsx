@@ -7,12 +7,6 @@ import ShareRemote from './2 - Share pages/2 - ShareRemote';
 const Share: React.FC = () => {
 
   const [segment, setSegment] = useState('verify');
-  const [qrValue, setQrValue] = useState(crypto.randomUUID());
-
-  useEffect(() => {
-    const timerId = setInterval(() => setQrValue(crypto.randomUUID()), 1000);
-    return () => clearInterval(timerId);
-  });
 
   const contentContainerStyle: CSSProperties = {
     display: 'flex',

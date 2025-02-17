@@ -12,7 +12,12 @@ export default defineConfig({
     legacy(),
     VitePWA({
       registerType: 'autoUpdate',
-      includeAssets: ['icon/cropped-LAW-Favicon-1-32x32.png', 'icon/cropped-LAW-Favicon-1-180x180.png', 'icon/cropped-LAW-Favicon-1-192x192.png'],
+      includeAssets: [
+        'icon/cropped-LAW-Favicon-1-32x32.png',
+        'icon/cropped-LAW-Favicon-1-144x144.png',
+        'icon/cropped-LAW-Favicon-1-180x180.png',
+        'icon/cropped-LAW-Favicon-1-192x192.png'
+      ],
       manifest: {
         name: 'LA Wallet',
         short_name: 'LA Wallet',
@@ -22,6 +27,11 @@ export default defineConfig({
           {
             src: 'icon/cropped-LAW-Favicon-1-32x32.png',
             sizes: '32x32',
+            type: 'image/png'
+          },
+          {
+            src: 'icon/cropped-LAW-Favicon-1-144x144.png',
+            sizes: '144x144',
             type: 'image/png'
           },
           {

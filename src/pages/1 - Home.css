@@ -16,6 +16,8 @@ ion-item {
 
 .swiper-slide-note {
     opacity: 1 !important;
+    transform: none !important;
+    z-index: 0 !important;
     height: 300px !important;
 }
 

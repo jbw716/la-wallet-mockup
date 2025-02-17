@@ -1,5 +1,6 @@
 import { Redirect, Route } from 'react-router-dom';
 import {
+  IonAlert,
   IonApp,
   IonIcon,
   IonLabel,
@@ -7,7 +8,9 @@ import {
   IonTabBar,
   IonTabButton,
   IonTabs,
-  setupIonicReact
+  setupIonicReact,
+  isPlatform,
+  getPlatforms
 } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
 import { home, share, scan, menu } from 'ionicons/icons';
@@ -46,50 +49,58 @@ import '@ionic/react/css/display.css';
 /* Theme variables */
 import './theme/variables.css';
 
-setupIonicReact();
+setupIonicReact({
+  innerHTMLTemplatesEnabled: true
+});
 
 const App: React.FC = () => (
-  <IonApp>
-    <IonReactRouter>
-      <IonTabs>
-        <IonRouterOutlet>
-          <Route exact path="/home">
-            <Home />
-          </Route>
-          <Route exact path="/share">
-            <Share />
-          </Route>
-          <Route path="/scan">
-            <Scan />
-          </Route>
-          <Route path="/menu">
-            <Menu />
-          </Route>
-          <Route exact path="/">
-            <Redirect to="/home" />
-          </Route>
-        </IonRouterOutlet>
-        <IonTabBar slot="bottom" color="primary">
-          <IonTabButton tab="home" href="/home">
-            <IonIcon aria-hidden="true" icon={home} />
-            <IonLabel>Home</IonLabel>
-          </IonTabButton>
-          <IonTabButton tab="share" href="/share">
-            <IonIcon aria-hidden="true" icon={share} />
-            <IonLabel>Share</IonLabel>
-          </IonTabButton>
-          <IonTabButton tab="scan" href="/scan">
-            <IonIcon aria-hidden="true" icon={scan} />
-            <IonLabel>Scan</IonLabel>
-          </IonTabButton>
-          <IonTabButton tab="menu" href="/menu">
-            <IonIcon aria-hidden="true" icon={menu} />
-            <IonLabel>Menu</IonLabel>
-          </IonTabButton>
-        </IonTabBar>
-      </IonTabs>
-    </IonReactRouter>
-  </IonApp>
+  <>
+    <IonApp>
+      <IonReactRouter>
+        <IonTabs>
+          <IonRouterOutlet>
+            <Route exact path="/home">
+              <Home />
+            </Route>
+            <Route exact path="/share">
+              <Share />
+            </Route>
+            <Route path="/scan">
+              <Scan />
+            </Route>
+            <Route path="/menu">
+              <Menu />
+            </Route>
+            <Route exact path="/">
+              <Redirect to="/home" />
+            </Route>
+          </IonRouterOutlet>
+          <IonTabBar slot="bottom" color="primary">
+            <IonTabButton tab="home" href="/home">
+              <IonIcon aria-hidden="true" icon={home} />
+              <IonLabel>Home</IonLabel>
+            </IonTabButton>
+            <IonTabButton tab="share" href="/share">
+              <IonIcon aria-hidden="true" icon={share} />
+              <IonLabel>Share</IonLabel>
+            </IonTabButton>
+            <IonTabButton tab="scan" href="/scan">
+              <IonIcon aria-hidden="true" icon={scan} />
+              <IonLabel>Scan</IonLabel>
+            </IonTabButton>
+            <IonTabButton tab="menu" href="/menu">
+              <IonIcon aria-hidden="true" icon={menu} />
+              <IonLabel>Menu</IonLabel>
+            </IonTabButton>
+          </IonTabBar>
+        </IonTabs>
+      </IonReactRouter>
+    </IonApp>
+    <IonAlert isOpen={!isPlatform('android') && !isPlatform('ios')}
+      header='Warning'
+      message='This application is created and styled for mobile devices.<br />Please view on a mobile device for the best experience.'
+      buttons={['Dismiss']} />
+  </>
 );
 
 export default App;

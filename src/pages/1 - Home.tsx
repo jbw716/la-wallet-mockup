@@ -1,12 +1,12 @@
 import './1 - Home.css';
 import 'swiper/css';
 import 'swiper/css/effect-cards';
-import { IonContent, IonHeader, IonPage, IonToolbar, IonImg, IonItem, IonLabel, IonList, IonButton, IonIcon } from '@ionic/react';
-import { CSSProperties } from 'react';
+import { IonContent, IonHeader, IonPage, IonToolbar, IonImg, IonItem, IonLabel, IonList, IonButton, IonIcon, IonText } from '@ionic/react';
+import { CSSProperties, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { EffectCoverflow, Mousewheel } from 'swiper/modules';
 // import { EffectCards } from 'swiper/modules';
-import { call, chatbubble, globe } from 'ionicons/icons';
+import { arrowDown, call, chatbubble, globe } from 'ionicons/icons';
 
 const verticalCenterStyle: CSSProperties = {
   display: 'flex',
@@ -16,6 +16,7 @@ const verticalCenterStyle: CSSProperties = {
 }
 
 const Home: React.FC = () => {
+  const [slideIndex, setSlideIndex] = useState(5);
   return (
     <IonPage>
       <IonHeader>
@@ -74,24 +75,40 @@ const Home: React.FC = () => {
               direction='vertical'
               spaceBetween={-150}
               mousewheel={true}
+              initialSlide={5}
+              onSlideChange={(swiper) => {
+                setSlideIndex(swiper.activeIndex);
+                if (swiper.activeIndex === 6) {
+                  swiper.slideTo(5);
+                }
+              }}
             >
               <SwiperSlide style={{ ...verticalCenterStyle, height: '300px' }}>
-                <img src='assets/img/license.png' />
-              </SwiperSlide>
-              <SwiperSlide style={{ ...verticalCenterStyle, height: '300px' }}>
-                <img src='assets/img/CarRegistration.jpg' />
-              </SwiperSlide>
-              <SwiperSlide style={{ ...verticalCenterStyle, height: '300px' }}>
-                <img src='assets/img/ConcealedHandgun.jpg' />
-              </SwiperSlide>
-              <SwiperSlide style={{ ...verticalCenterStyle, height: '300px' }}>
-                <img src='assets/img/LDFW.jpg' />
+                <img src='assets/img/SMARTHealth.jpg' />
               </SwiperSlide>
               <SwiperSlide style={{ ...verticalCenterStyle, height: '300px' }}>
                 <img src='assets/img/Medicaid.jpg' />
               </SwiperSlide>
               <SwiperSlide style={{ ...verticalCenterStyle, height: '300px' }}>
-                <img src='assets/img/SMARTHealth.jpg' />
+                <img src='assets/img/LDFW.jpg' />
+              </SwiperSlide>
+              <SwiperSlide style={{ ...verticalCenterStyle, height: '300px' }}>
+                <img src='assets/img/ConcealedHandgun.jpg' />
+              </SwiperSlide>
+              <SwiperSlide style={{ ...verticalCenterStyle, height: '300px' }}>
+                <img src='assets/img/CarRegistration.jpg' />
+              </SwiperSlide>
+              <SwiperSlide style={{ ...verticalCenterStyle, height: '300px' }}>
+                <img src='assets/img/license.png' />
+              </SwiperSlide>
+              <SwiperSlide className='swiper-slide-note' style={verticalCenterStyle}>
+                <div style={{ transition: 'opacity 0.15s', opacity: slideIndex >= 5 ? 1 : 0 }}>
+                  <IonIcon icon={arrowDown} color="light" style={{ fontSize: '2em', display: 'block', margin: 'auto', paddingTop: '4.5em' }} />
+                  <br />
+                  <IonText color="light">
+                    Swipe down for more...
+                  </IonText>
+                </div>
               </SwiperSlide>
             </Swiper>
           </div>

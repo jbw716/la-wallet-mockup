@@ -103,7 +103,7 @@ const Home: React.FC = () => {
               </SwiperSlide>
               <SwiperSlide className='swiper-slide-note' style={verticalCenterStyle}>
                 <div style={{ transition: 'opacity 0.15s', opacity: slideIndex >= 5 ? 1 : 0 }}>
-                  <IonIcon icon={arrowDown} color="light" style={{ paddingTop: '4.5em', fontSize: '2em', display: 'block', margin: 'auto' }} />
+                  <IonIcon icon={arrowDown} color="light" style={{ paddingTop: '3em', fontSize: '2em', display: 'block', margin: 'auto' }} />
                   <br />
                   <IonText color="light">
                     Swipe down for more...

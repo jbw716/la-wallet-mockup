@@ -54,8 +54,8 @@ const ShareQR: React.FC = () => {
         </IonCardHeader>
         <IonCardContent>
           <div style={{ position: 'relative', height: '220px' }}>
-            <IonImg src='assets/img/face.png' style={{ left: '50%', transform: 'translateX(-50%)', width: '200px', height: '200px', objectFit: 'cover', position: 'absolute' }}></IonImg>
-            <QRCode value={JSON.stringify(qrValue)} size={200} ecLevel='H' qrStyle='dots' bgColor='transparent' style={{ left: '50%', top: '-10px', transform: 'translateX(-50%)', position: 'absolute' }}></QRCode>
+            <img src='assets/img/face.png' style={{ left: '50%', transform: 'translateX(-50%)', width: '200px', height: '200px', objectFit: 'cover', position: 'absolute' }} />
+            <QRCode value={JSON.stringify(qrValue)} size={200} ecLevel='H' qrStyle='dots' bgColor='transparent' style={{ left: '50%', transform: 'translateX(-50%)', top: '-10px', position: 'absolute' }}></QRCode>
           </div>
         </IonCardContent>
       </IonCard>

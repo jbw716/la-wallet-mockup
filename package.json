@@ -29,7 +29,8 @@
     "react-qrcode-logo": "^3.0.0",
     "react-router": "^5.3.4",
     "react-router-dom": "^5.3.4",
-    "swiper": "^11.2.2"
+    "swiper": "^11.2.2",
+    "vite-plugin-pwa": "^0.21.1"
   },
   "devDependencies": {
     "@capacitor/cli": "7.0.1",

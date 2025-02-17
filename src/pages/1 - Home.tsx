@@ -5,7 +5,6 @@ import { IonContent, IonHeader, IonPage, IonToolbar, IonImg, IonItem, IonLabel, 
 import { CSSProperties, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { EffectCoverflow, Keyboard, Mousewheel } from 'swiper/modules';
-// import { EffectCards } from 'swiper/modules';
 import { arrowDown, call, chatbubble, globe } from 'ionicons/icons';
 
 const verticalCenterStyle: CSSProperties = {
@@ -75,7 +74,7 @@ const Home: React.FC = () => {
               direction='vertical'
               spaceBetween={-150}
               mousewheel={true}
-              keyboard={{enabled: true}}
+              keyboard={{ enabled: true }}
               initialSlide={5}
               onSlideChange={(swiper) => {
                 setSlideIndex(swiper.activeIndex);

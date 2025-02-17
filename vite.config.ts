@@ -23,6 +23,7 @@ export default defineConfig({
         short_name: 'LA Wallet',
         description: 'A prototype of a new UI for LA Wallet',
         theme_color: '#306bb2',
+        background_color: '#306bb2',
         icons: [
           {
             src: 'icon/cropped-LAW-Favicon-1-32x32.png',

@@ -37,7 +37,7 @@ const Scan: React.FC = () => {
           <IonText color="light" style={{ flex: '1 1 10%', width: '100%', textAlign: 'center', paddingTop: '1.5em' }}>
             Scan a VerifyYou Code or SMART Health Card
           </IonText>
-          <div style={{ flex: '1 1 45%', width: '100%' }}>
+          <div style={{ flex: '1 1 45%', width: '100%', aspectRatio: 1 / 1 }}>
             {showScanner &&
               <Scanner formats={['qr_code']}
                 components={{ zoom: true }}

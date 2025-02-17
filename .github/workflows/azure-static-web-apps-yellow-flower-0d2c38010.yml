@@ -17,6 +17,8 @@ jobs:
     permissions:
        id-token: write
        contents: read
+    env:
+      NODE_VERSION: 22.14.0
     steps:
       - uses: actions/checkout@v4
         with:

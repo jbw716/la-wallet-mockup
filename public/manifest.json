@@ -1,21 +1,28 @@
 {
-  "short_name": "Ionic App",
-  "name": "My Ionic App",
+  "short_name": "LA Wallet",
+  "name": "LA Wallet",
   "icons": [
     {
-      "src": "assets/icon/favicon.png",
-      "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/x-icon"
+      "src": "assets/icon/cropped-LAW-Favicon-1-192x192.png",
+      "type": "image/png",
+      "sizes": "192x192",
+      "purpose": "maskable"
     },
     {
-      "src": "assets/icon/icon.png",
+      "src": "assets/icon/cropped-LAW-Favicon-1-180x180.png",
       "type": "image/png",
-      "sizes": "512x512",
+      "sizes": "180x180",
+      "purpose": "maskable"
+    },
+    {
+      "src": "assets/icon/cropped-LAW-Favicon-1-32x32.png",
+      "type": "image/png",
+      "sizes": "32x32",
       "purpose": "maskable"
     }
   ],
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#ffffff",
-  "background_color": "#ffffff"
+  "theme_color": "#306bb2",
+  "background_color": "#306bb2"
 }

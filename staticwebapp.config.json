@@ -1,6 +1,6 @@
 {
-  "platform": {
-    "apiRuntime": "node:20"
+  "engines": {
+    "node": "22.14.0"
   },
   "navigationFallback": {
     "rewrite": "index.html",

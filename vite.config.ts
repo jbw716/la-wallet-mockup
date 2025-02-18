@@ -13,10 +13,8 @@ export default defineConfig({
     VitePWA({
       registerType: 'autoUpdate',
       includeAssets: [
-        'icon/cropped-LAW-Favicon-1-32x32.png',
-        'icon/cropped-LAW-Favicon-1-144x144.png',
-        'icon/cropped-LAW-Favicon-1-180x180.png',
-        'icon/cropped-LAW-Favicon-1-192x192.png'
+        'icon/*',
+        'img/*'
       ],
       manifest: {
         name: 'LA Wallet',

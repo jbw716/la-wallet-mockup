@@ -66,13 +66,13 @@ const Home: React.FC = () => {
               modules={[EffectCoverflow, Mousewheel, Keyboard]}
               effect={'coverflow'}
               coverflowEffect={{
-                // rotate: 0
+                rotate: 0
               }}
               grabCursor={true}
               centeredSlides={true}
               slidesPerView="auto"
               direction='vertical'
-              spaceBetween={-150}
+              spaceBetween={-250}
               mousewheel={true}
               keyboard={{ enabled: true }}
               initialSlide={5}
@@ -101,9 +101,9 @@ const Home: React.FC = () => {
               <SwiperSlide style={{ ...verticalCenterStyle, height: '300px' }}>
                 <img src='assets/img/license.png' />
               </SwiperSlide>
-              <SwiperSlide className='swiper-slide-note' style={verticalCenterStyle}>
+              <SwiperSlide className='swiper-slide-note' style={{...verticalCenterStyle, filter: 'none'}}>
                 <div style={{ transition: 'opacity 0.15s', opacity: slideIndex >= 5 ? 1 : 0 }}>
-                  <IonIcon icon={arrowDown} color="light" style={{ paddingTop: '2em', fontSize: '2em', display: 'block', margin: 'auto' }} />
+                  <IonIcon icon={arrowDown} color="light" style={{ paddingTop: '9em', fontSize: '2em', display: 'block', margin: 'auto' }} />
                   <br />
                   <IonText color="light">
                     Swipe down for more...

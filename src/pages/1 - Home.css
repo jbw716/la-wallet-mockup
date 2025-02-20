@@ -8,10 +8,12 @@ ion-item {
     --border-color: white;
 }
 .swiper-slide {
-    opacity: 0.2 !important;
+    /* opacity: 0.2 !important; */
+    filter: brightness(50%);
 }
 .swiper-slide-active {
-    opacity: 1 !important;
+    /* opacity: 1 !important; */
+    filter: none;
 }
 
 .swiper-slide-note {

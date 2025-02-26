@@ -1,5 +1,4 @@
 import { IonCard, IonCardContent, IonCardHeader, IonCardSubtitle, IonCheckbox, IonIcon, IonImg, IonItem, IonLabel, IonList, IonNote, IonText } from '@ionic/react';
-// import './2 - Share.css';
 import { useEffect, useState } from 'react';
 import { informationCircle } from 'ionicons/icons';
 import { QRCode } from 'react-qrcode-logo';
@@ -61,10 +60,10 @@ const ShareQR: React.FC = () => {
       </IonCard>
       <IonItem lines="none">
         <IonIcon icon={informationCircle} slot="start" color="light" style={{ margin: '0 1em 0 0' }}></IonIcon>
-        <IonText color="light">
+        <IonText color="light" style={{ textAlign: 'center' }}>
           Select whether you would like to share you name, and, and/or driver's license number.
           <br />
-          * <IonNote color="light">Portrait and status information are required.</IonNote>
+          * <IonNote color="light" style={{ textAlign: 'center' }}>Portrait and status information are required.</IonNote>
         </IonText>
       </IonItem>
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>

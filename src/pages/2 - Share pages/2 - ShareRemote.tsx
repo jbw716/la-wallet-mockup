@@ -1,4 +1,3 @@
-import './2 - ShareRemote.css';
 import { IonButton, IonIcon, IonInput, IonItem, IonList, IonText } from '@ionic/react';
 import { informationCircle } from 'ionicons/icons';
 import { useState } from 'react';
@@ -8,9 +7,9 @@ const ShareRemote: React.FC = () => {
 
   return (
     <IonList lines="none" style={{ position: 'absolute', top: '20%' }}>
-      <IonItem lines="none">
+      <IonItem lines="none" style={{ paddingBottom: '1em' }}>
         <IonIcon icon={informationCircle} slot="start" color="light" style={{ margin: '0 1em 0 0' }}></IonIcon>
-        <IonText color="light">
+        <IonText color="light" style={{ textAlign: 'center' }}>
           Enter the Verify You code the requester has provided to verify your identity remotely.
         </IonText>
       </IonItem>
